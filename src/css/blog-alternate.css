@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-height: 85px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.blogs-title {
+  display: inline-block;
+  font-weight: 800 !important;
+  font-size: 8vw;
+}
+
+.title-line-horizontal {
+  height: 20px;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.title-line-vertical {
+  position: relative;
+  width: 20px;
+  background-color: #000000;
+  overflow: hidden !important;
+}
+
+.title-line-horizontal:first-of-type{
+  margin-top: 20px;
+}
+
+.title-line-horizontal-bottom{
+  /*width: 100%;*/ width: 0;
+  margin-bottom: 50px;
+  margin-left: 100vw;
+  height: 20px;
+  background-color: #000000;
+}
+
+.photo {
+  height: 100%;
+}
+
+.icon {
+  width: inherit;
+}
+
+.share-button {
+  height: 100%;
+}
+
+.text {
+  font-family: 'Raleway', 'Roboto', sans-serif;
+  font-weight: 200;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  background-color: #F9F9F9;
+}
+
+.title {
+  font-size: 50px;
+  margin-left: 8px;
+}
+
+.logo-wrapper{
+  height: 65%;
+  margin-right: 8px;
+  margin-top: 8px;
+  display: block;
+}
+
+.logo {
+  height: 100%;
+}
+
+.post {
+  position: relative;
+}
+
+.tags {
+  height: 100%;
+  overflow: hidden;
+}
+
+.color-banner{
+  width: 0;
+  height: 20px;
+  margin-top: 20px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.blog-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+  margin-left: 8px;
+  margin-top: 3px;
+}
+
+.blog-header-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.blog-header-divider {
+  height: 90%;
+  width: 1px;
+  align-self: flex-start;
+  background-color: #000000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.blog-number {
+  font-size: 40px;
+  font-weight: 200;
+  margin-right: 25px;
+  height: 100%;
+}
+
+.blog-aux {
+  position: absolute;
+  right: 50px;
+  height: 75px;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-share-button {
+  width: inherit;
+}
+
+.meta-opts {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10px;
+  height: 40px;
+}
+
+.meta-opt {
+  padding-right: 10px;
+}
+
+.blog-share-twitter, .blog-share-facebook {
+  height: 30px;
+}
+
+@media only screen and (max-width: 500px){
+  .blog-share-twitter {
+    right: 96px;
+    top: 80px;
+  }
+}
+
+@media only screen and (max-width: 750px){
+  .color-banner{
+    height: 10px;
+  }
+}
+
+.blog-share-options {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.blog-info-button {
+  width: inherit;
+}
+
+.header-sub-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-sub-container .text{
+  font-size: 12vmin;
+  margin-right: 10px;
+}
+
+.blog-title {
+  font-weight: 800;
+  overflow: visible;
+}
+
+.blog-date {
+  position: relative;
+  bottom: 2vh;
+  font-size: 5vmin;
+}
+
+.blog-photo{
+  margin-top: 20px;
+  height: 500px;
+}
+
+.blog-writing {
+  font-size: 3vmin;
+  margin-top: 15px;
+  padding-bottom: 5px;
+}
+
+.blog-scroller {
+  position: fixed;
+  top: var(--header-height);
+  right: 14px;
+  height: calc(100% - (2 *(var(--header-height) - 10px)));
+  width: 10px;
+  opacity: 0.7;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.scroll-link {
+  display: block;
+  width: 10px;
+  margin: 0;
+}
+
+.scroll-div {
+  width: 10px;
+  margin: 0;
+}
+
+.scroll-position {
+  position: absolute;
+  z-index; 2;
+  top: 0;
+  background-color: #333333;
+  width: 10px;
+  height: 20px;
+}
+
+.metrics-button{
+  position: fixed;
+  top: calc(50% - 20px);
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.25s;
+}
+
+#metrics-expander {
+  height: 80%;
+  width: 80%;
+}
+
+.metrics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.metrics-section{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-container{
+  position: relative;
+}

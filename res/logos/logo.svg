@@ -1,0 +1,28 @@
+<svg width="899" height="551" viewBox="0 0 899 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group 2.3</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-17845 -2121)">
+<g id="Group 2.3">
+<g id="Group">
+<g id="Subtract">
+<use xlink:href="#path0_fill" transform="translate(18362.4 2121)" fill="#F2C94C"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(18294.6 2181.82)" fill="#27AE60"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_fill" transform="translate(18051.4 2181.82)" fill="#4F4F4F"/>
+</g>
+</g>
+<g id="Subtract">
+<use xlink:href="#path3_fill" transform="translate(17845 2121)" fill="#2F80ED"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 221.328 0L 0 415.461L 93.4941 550.935L 381.549 0L 221.328 0Z"/>
+<path id="path1_fill" d="M 161.675 490.11L 0 256.658L 0.0265208 0L 245.882 328.391L 161.675 490.11Z"/>
+<path id="path2_fill" d="M 243.114 0L 0 333.587L 81.3883 490.182L 335.523 123.363L 243.171 0.0759988L 243.114 0Z"/>
+<path id="path3_fill" fill-rule="evenodd" d="M 0 0L 288.09 551L 385.533 409.802L 162.211 0L 0 0Z"/>
+</defs>
+</svg>

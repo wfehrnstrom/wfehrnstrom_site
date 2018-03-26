@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset = 'utf-8'/>
+  <link rel='stylesheet' href='../css/blog-alternate.css'/>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100, 200" rel="stylesheet">
+  <script type='text/javascript' src='../../lib/jquery-3.2.1.min.js'></script>
+  <script type='text/javascript' src='../../lib/hashids.min.js'></script>
+  <script type='text/javascript' src='../../lib/Chart.bundle.min.js'></script>
+  <script type='text/javascript' src='../../hook/image.js'></script>
+  <script type='text/javascript' src='../js/metrics.js'></script>
+  <script type='text/javascript' src='../js/logo.js'></script>
+  <script type='text/javascript' src='../js/post.js'></script>
+  <script type='text/javascript' src='../js/blog-alternate.js'></script>
+  <title>Thoughts</title>
+</head>
+<body>
+  <div class = "page">
+    <nav class = "header">
+      <div class = "title text">Thoughts</div>
+      <a class = "logo-wrapper" href = "index.html"><img class = "logo" src="../../res/logos/logo.svg" alt="logo"/></a>
+    </nav>
+    <div class = "blogs page-section">
+      <article class = "post" id = "post01" data-blog-type= "personal">
+        <div class = "color-banner"></div>
+        <div class = "blog-header">
+          <div class = "blog-header-left">
+            <div class = "blog-title text">Dereflection.</div>
+            <div class = "blog-date text"> 00:41 Dec. 22, 2017</div>
+          </div>
+          <div class = "blog-header-divider"></div>
+          <div class = "blog-number text">02</div>
+          <div class = "blog-share-twitter opacity-immutable"><img class = "share-button opacity-immutable" src = "../../res/logos/blog_share_twitter.svg" alt = "Share Post on Twitter"/></div>
+          <div class = "blog-share-facebook opacity-immutable"><img class = "share-button opacity-immutable" src = "../../res/logos/blog_share_facebook.png" alt = "Share Post on Facebook"/></div>
+          <div class = "blog-aux">
+            <div class = "blog-share-button"><img class = "icon" src = "../../res/logos/blog_share_icon.svg" alt = "Share Post"/></div>
+          </div>
+        </div>
+        <div class = "blog-photo"><img class = "photo" src = "../../res/media/images/ucla_sample_img.jpg"/></div>
+        <div class = "blog-writing text">
+          Lorem ipsum dolor sit amet, munere aperiri
+          deseruisse sea ex. Ad vide dicit persius vis.
+          An tamquam disputando contentiones usu, wisi
+          consectetuer et cum. Dicam quando eos ad, te
+          adipisci contentiones definitionem pro, ius an
+          nullam referrentur voluptatibus. Augue causae
+          menandri ea has. Eu per sint ceteros assueverit.
+        </div>
+      </article>
+      <article class = "post" id = "post02" data-blog-type= "how-to">
+        <div class = "color-banner"></div>
+        <div class = "blog-header">
+          <div class = "blog-header-left">
+            <div class = "blog-title text">The Making of A Drone</div>
+            <div class = "blog-date text"> 10:29 Dec. 23, 2017</div>
+          </div>
+          <div class = "blog-header-divider"></div>
+          <div class = "blog-number text">01</div>
+          <div class = "share-opts">
+            <div class = "blog-share-twitter opacity-immutable"><img class = "share-button opacity-immutable" src = "../../res/logos/blog_share_twitter.svg" alt = "Share Post on Twitter"/></div>
+            <div class = "blog-share-facebook opacity-immutable"><img class = "share-button opacity-immutable" src = "../../res/logos/blog_share_facebook.png" alt = "Share Post on Facebook"/></div>
+          </div>
+        </div>
+        <div class = "blog-writing text">
+          Lorem ipsum dolor sit amet, munere aperiri
+          deseruisse sea ex. Ad vide dicit persius vis.
+          An tamquam disputando contentiones usu, wisi
+          consectetuer et cum. Dicam quando eos ad, te
+          adipisci contentiones definitionem pro, ius an
+          nullam referrentur voluptatibus. Augue causae
+          menandri ea has. Eu per sint ceteros assueverit.
+        </div>
+      </article>
+    </div>
+    <div class = "metrics flex">
+      <div class = "post-frequencies metrics-section flex">
+        <div class = "blog-title text position-relative">Post History</div>
+      </div>
+      <div class = "post-types metrics-section flex">
+        <div class = "blog-title text position-relative">Post Types</div>
+        <div class = "post-types chart-container position-relative"><canvas class = "graph" id='post-types'></canvas></div>
+      </div>
+    </div>
+    <nav class = "blog-scroller">
+      <div class = "scroll-position"></div>
+    </nav>
+    <div class = "metrics-button"><img class = "icon" id = "metrics-expander" src = "../../res/logos/left_arrow.svg" alt="Blog Metrics"/></div>
+  </div>
+</body>
+</html>

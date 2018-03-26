@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+  <meta charset = 'utf-8'/>
+  <meta name='author' content='Will Fehrnstrom'/>
+  <meta name='description' content='Will Fehrnstrom is an Undergraduate at UCLA. He is a Full Stack Developer from Orinda, CA.'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/>
+  <link rel='stylesheet' href='../css/styles_2.css'/>
+  <link rel='stylesheet' href='../css/blog-alternate.css'/>
+  <link rel='stylesheet' href='../css/projects.css'/>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'>
+  <link rel='stylesheet' href='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:100, 200' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet'>
+  <script src='https://www.gstatic.com/firebasejs/4.11.0/firebase.js'></script>
+  <script src='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js'></script>
+  <script type='text/javascript' src='../../lib/jquery-3.2.1.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js'></script>
+  <script src='../js/blog-alternate.js'></script>
+  <script src='../js/index_2.js'></script>
+  <script src='../js/post.js'></script>
+  <script src='../js/projects.js'></script>
+  <script src='../js/logo.js'></script>
+  <script type='text/javascript' src='../../lib/hashids.min.js'></script>
+  <title>Will Fehrnstrom</title>
+</head>
+<body>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: 'AIzaSyB-HwYKQL8bZUgmpkwt2OOTFwWS4K9XymE',
+      authDomain: 'website-ba0ae.firebaseapp.com',
+      databaseURL: 'https://website-ba0ae.firebaseio.com',
+      projectId: 'website-ba0ae',
+      storageBucket: 'website-ba0ae.appspot.com',
+      messagingSenderId: '1033996135819'
+    };
+    firebase.initializeApp(config);
+  </script>
+  <header></header>
+  <main>
+    <div class = 'container menu'>
+      <!-- <div class = 'row menu-row center-align'>
+        <a id = 'about-me-link' class = 'nav-button menu-item waves-effect waves-light col s12 m3 l2.5'>
+          <div class = 'menu-bar-text'>About Me</div>
+        </a>
+        <a id = 'resume-link' class = 'nav-button menu-item waves-effect waves-light col s12 m3 l2.5'>
+          <div class ='menu-bar-text'>Experience</div>
+        </a>
+        <a id = 'media-link' class = 'nav-button menu-item waves-effect waves-light col s12 m3 l2.5'>
+          <div class ='menu-bar-text'>Media</div>
+        </a>
+        <a id = 'blog-link' class = 'nav-button menu-item waves-effect waves-light col s12 m3 l2.5'>
+          <div class ='menu-bar-text'>Blog</div>
+        </a>
+        <a id = 'logo-area' class = 'nav-button menu-item waves-effect waves-light col s12 m3 l2'>
+        </a>
+      </div> -->
+      <a id = 'about-me-link' class = 'nav-button menu-item waves-effect waves-light'>
+        <div class = 'menu-bar-text'>About Me</div>
+      </a>
+      <a id = 'resume-link' class = 'nav-button menu-item waves-effect waves-light'>
+        <div class ='menu-bar-text'>Experience</div>
+      </a>
+      <a id = 'media-link' class = 'nav-button menu-item waves-effect waves-light'>
+        <div class ='menu-bar-text'>Media</div>
+      </a>
+      <a id = 'blog-link' class = 'nav-button menu-item waves-effect waves-light'>
+        <div class ='menu-bar-text'>Blog</div>
+      </a>
+    </div>
+    <div class = 'container page-background'>
+      <div class = 'background-row row'>
+        <div class = 'background-col col s12'>
+          <!--width="637" height="206"-->
+          <svg id = "logo-svg" viewBox="0 0 637 206" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <desc>Created using Figma</desc>
+          <g id="main-logo-group" transform="translate(576 -562)">
+          <g id="Group">
+          <clipPath id = "letter-clip">
+            <path id="left_rect" d="M 0, 0L 32, 0 L 32, 200.895 L 0, 200.895 Z" transform="translate(-576 563)"/>
+            <path id="path0_fill" d="M 39.5836 200.895L 0 200.895C 69.6491 150.221 190.9 52.8856 156.855 39.5977L 100.014 39.5977L 99.5532 0.261873L 146.159 0.261873L 223.316 0L 223.316 39.195C 222.821 47.7375 106.169 148.089 39.5836 200.895Z" transform="translate(-160.355 563)" fill="#2F80ED"/>
+            <path id="vector_stroke" d="M 0 200.895L -0.294161 200.49L -1.53711 201.395L 0 201.395L 0 200.895ZM 39.5836 200.895L 39.5836 201.395L 39.7578 201.395L 39.8943 201.286L 39.5836 200.895ZM 146.159 0.261873L 146.159 0.761876L 146.16 0.76187L 146.159 0.261873ZM 220.316 0L 220.816 0L 220.816 -0.501769L 220.314 -0.499997L 220.316 0ZM 220.316 39.195L 220.816 39.195L 220.816 39.2668L 219.836 39.3357L 220.316 39.195ZM 99.5532 0.261873L 99.5532 -0.238127L 99.0473 -0.238127L 99.0532 0.267725L 99.5532 0.261873ZM 100.014 39.5977L 99.5137 39.6035L 99.5195 40.0977L 100.014 40.0977L 100.014 39.5977ZM 156.855 39.5977L 157.037 39.1319L 156.949 39.0977L 156.855 39.0977L 156.855 39.5977ZM 0 201.395L 39.5836 201.395L 39.5836 200.395L 0 200.395L 0 201.395ZM 146.16 0.76187L 220.317 0.499997L 220.314 -0.499997L 146.157 -0.238124L 146.16 0.76187ZM 39.8943 201.286C 73.1942 174.878 119.01 136.583 156.189 103.821C 174.778 87.441 191.213 72.439 202.847 60.9951C 208.663 55.2746 213.288 50.4345 216.383 46.7515C 217.929 44.9118 220.106 43.3468 219.859 42.0965C 220.235 41.4721 220.515 40.9102 220.68 40.4206C 220.841 39.9434 220.917 39.468 220.795 39.0543L 219.836 39.3357C 220.871 39.456 219.87 39.6938 220.733 40.1006C 220.6 40.495 220.359 40.9879 220.002 41.5806C 220.289 42.7646 220.151 44.2831 215.617 46.1081C 212.553 49.7545 207.955 54.5684 202.146 60.2822C 190.532 71.7069 174.112 86.6948 155.528 103.071C 118.361 135.822 72.5585 174.106 39.2729 200.503L 39.8943 201.286ZM 220.816 0L 220.816 39.195L 220.816 39.195L 220.816 0L 220.816 0ZM 146.159 -0.238127L 99.5532 -0.238127L 99.5532 0.761873L 146.159 0.761873L 146.159 -0.238127ZM 99.0532 0.267725L 99.5137 39.6035L 100.514 39.5918L 100.053 0.256021L 99.0532 0.267725ZM 0.294161 201.299C 35.1254 175.957 82.8688 138.942 117.653 106.593C 135.039 90.4246 149.219 75.3933 156.923 63.5529C 160.768 57.6433 163.046 52.4596 163.246 48.289C 163.347 46.1898 162.922 44.3274 161.886 42.7658C 160.851 41.2055 159.237 39.9904 157.037 39.1319L 156.673 40.0634C 158.729 40.8659 160.157 41.9684 161.053 43.3185C 161.947 44.6674 162.34 46.3082 162.247 48.2411C 162.061 52.135 159.908 57.1315 156.085 63.0075C 148.452 74.7383 134.35 89.6996 116.972 105.86C 82.2305 138.17 34.5237 175.158 -0.294161 200.49L 0.294161 201.299ZM 100.014 40.0977L 156.855 40.0977L 156.855 39.0977L 100.014 39.0977L 100.014 40.0977Z" transform="translate(-160.355 563)"/>
+            <path id="letter-clip-path" d = "M 33, 0" transform="translate(-576 563)"><animate id="letter-animate" attributeName="d" from="M 33, 0 L 33, 0 L33, 200.895 L33, 200.895 L33, 0" to="M 33, 0 L 600, 0 L 550, 200.895 L 33, 200.895 L 33, 0" dur="2s" fill="freeze"/></path>
+          </clipPath>
+          <g id="Vector">
+          <use href="#vector_fill" transform="translate(-160.355 563)" fill="#2F80ED"/>
+          <use href="#path1_stroke" transform="translate(-160.355 563)" fill="#2F80ED"/>
+          </g>
+          <g id="Rectangle">
+          <path id="left_rect_stroke" d="M 20.25, 0L 20.25, 205" transform="translate(-576 563)" fill="#2F80ED" stroke-width="25" stroke="#2F80ED"/>
+          </g>
+          <g id="WSF">
+          <use href="#path3_fill"  fill="#3F3F3F" transform="translate(-560 481)"/>
+          </g>
+          </g>
+          </g>
+          <defs>
+          <path id="vector_fill" d="M 39.5836 200.895L 0 200.895C 69.6491 150.221 190.9 52.8856 156.855 39.5977L 100.014 39.5977L 99.5532 0.261873L 146.159 0.261873L 220.316 0L 220.316 39.195C 222.821 47.7375 106.169 148.089 39.5836 200.895Z"/>
+          <path id="vector_stroke" d="M 0 200.895L -0.294161 200.49L -1.53711 201.395L 0 201.395L 0 200.895ZM 39.5836 200.895L 39.5836 201.395L 39.7578 201.395L 39.8943 201.286L 39.5836 200.895ZM 146.159 0.261873L 146.159 0.761876L 146.16 0.76187L 146.159 0.261873ZM 220.316 0L 220.816 0L 220.816 -0.501769L 220.314 -0.499997L 220.316 0ZM 220.316 39.195L 219.816 39.195L 219.816 39.2668L 219.836 39.3357L 220.316 39.195ZM 99.5532 0.261873L 99.5532 -0.238127L 99.0473 -0.238127L 99.0532 0.267725L 99.5532 0.261873ZM 100.014 39.5977L 99.5137 39.6035L 99.5195 40.0977L 100.014 40.0977L 100.014 39.5977ZM 156.855 39.5977L 157.037 39.1319L 156.949 39.0977L 156.855 39.0977L 156.855 39.5977ZM 0 201.395L 39.5836 201.395L 39.5836 200.395L 0 200.395L 0 201.395ZM 146.16 0.76187L 220.317 0.499997L 220.314 -0.499997L 146.157 -0.238124L 146.16 0.76187ZM 39.8943 201.286C 73.1942 174.878 119.01 136.583 156.189 103.821C 174.778 87.441 191.213 72.439 202.847 60.9951C 208.663 55.2746 213.288 50.4345 216.383 46.7515C 217.929 44.9118 219.106 43.3468 219.859 42.0965C 220.235 41.4721 220.515 40.9102 220.68 40.4206C 220.841 39.9434 220.917 39.468 220.795 39.0543L 219.836 39.3357C 219.871 39.456 219.87 39.6938 219.733 40.1006C 219.6 40.495 219.359 40.9879 219.002 41.5806C 218.289 42.7646 217.151 44.2831 215.617 46.1081C 212.553 49.7545 207.955 54.5684 202.146 60.2822C 190.532 71.7069 174.112 86.6948 155.528 103.071C 118.361 135.822 72.5585 174.106 39.2729 200.503L 39.8943 201.286ZM 219.816 0L 219.816 39.195L 220.816 39.195L 220.816 0L 219.816 0ZM 146.159 -0.238127L 99.5532 -0.238127L 99.5532 0.761873L 146.159 0.761873L 146.159 -0.238127ZM 99.0532 0.267725L 99.5137 39.6035L 100.514 39.5918L 100.053 0.256021L 99.0532 0.267725ZM 0.294161 201.299C 35.1254 175.957 82.8688 138.942 117.653 106.593C 135.039 90.4246 149.219 75.3933 156.923 63.5529C 160.768 57.6433 163.046 52.4596 163.246 48.289C 163.347 46.1898 162.922 44.3274 161.886 42.7658C 160.851 41.2055 159.237 39.9904 157.037 39.1319L 156.673 40.0634C 158.729 40.8659 160.157 41.9684 161.053 43.3185C 161.947 44.6674 162.34 46.3082 162.247 48.2411C 162.061 52.135 159.908 57.1315 156.085 63.0075C 148.452 74.7383 134.35 89.6996 116.972 105.86C 82.2305 138.17 34.5237 175.158 -0.294161 200.49L 0.294161 201.299ZM 100.014 40.0977L 156.855 40.0977L 156.855 39.0977L 100.014 39.0977L 100.014 40.0977Z"/>
+          <path id="path3_fill" d="M 218.812 226.344C 218.812 234.688 217.219 242.562 214.031 249.969C 210.938 257.281 206.625 263.703 201.094 269.234C 195.656 274.672 189.234 278.984 181.828 282.172C 174.516 285.266 166.688 286.812 158.344 286.812C 150.844 286.812 143.625 285.5 136.688 282.875C 129.844 280.25 123.656 276.406 118.125 271.344C 112.594 276.406 106.359 280.25 99.4219 282.875C 92.4844 285.5 85.2656 286.812 77.7656 286.812C 69.4219 286.812 61.5469 285.266 54.1406 282.172C 46.8281 278.984 40.4062 274.672 34.875 269.234C 29.4375 263.703 25.125 257.281 21.9375 249.969C 18.8438 242.562 17.2969 234.688 17.2969 226.344L 17.2969 82.3438L 57.6562 82.3438L 57.6562 226.344C 57.6562 229.156 58.1719 231.828 59.2031 234.359C 60.2344 236.797 61.6406 238.953 63.4219 240.828C 65.2969 242.609 67.4531 244.016 69.8906 245.047C 72.3281 246.078 74.9531 246.594 77.7656 246.594C 80.5781 246.594 83.2031 246.078 85.6406 245.047C 88.0781 244.016 90.1875 242.609 91.9688 240.828C 93.8438 238.953 95.2969 236.797 96.3281 234.359C 97.3594 231.828 97.875 229.156 97.875 226.344L 97.875 82.3438L 138.234 82.3438L 138.234 226.344C 138.234 229.156 138.75 231.828 139.781 234.359C 140.812 236.797 142.219 238.953 144 240.828C 145.875 242.609 148.031 244.016 150.469 245.047C 152.906 246.078 155.531 246.594 158.344 246.594C 161.156 246.594 163.781 246.078 166.219 245.047C 168.656 244.016 170.766 242.609 172.547 240.828C 174.422 238.953 175.875 236.797 176.906 234.359C 178.031 231.828 178.594 229.156 178.594 226.344L 178.594 82.3438L 218.812 82.3438L 218.812 226.344ZM 207.141 142.812C 207.141 134.469 208.734 126.641 211.922 119.328C 215.109 112.016 219.422 105.641 224.859 100.203C 230.391 94.6719 236.812 90.3125 244.125 87.125C 251.438 83.9375 259.266 82.3438 267.609 82.3438L 360.141 82.3438L 360.141 122.703L 267.609 122.703C 264.797 122.703 262.172 123.219 259.734 124.25C 257.297 125.281 255.141 126.734 253.266 128.609C 251.484 130.391 250.078 132.5 249.047 134.938C 248.016 137.375 247.5 140 247.5 142.812C 247.5 145.625 248.016 148.297 249.047 150.828C 250.078 153.266 251.484 155.422 253.266 157.297C 255.141 159.078 257.297 160.484 259.734 161.516C 262.172 162.547 264.797 163.062 267.609 163.062L 307.969 163.062C 316.312 163.062 324.141 164.656 331.453 167.844C 338.859 170.938 345.281 175.25 350.719 180.781C 356.25 186.219 360.562 192.641 363.656 200.047C 366.844 207.359 368.438 215.188 368.438 223.531C 368.438 231.875 366.844 239.703 363.656 247.016C 360.562 254.328 356.25 260.75 350.719 266.281C 345.281 271.719 338.859 276.031 331.453 279.219C 324.141 282.406 316.312 284 307.969 284L 218.391 284L 218.391 243.641L 307.969 243.641C 310.781 243.641 313.406 243.125 315.844 242.094C 318.281 241.062 320.391 239.656 322.172 237.875C 324.047 236 325.5 233.844 326.531 231.406C 327.562 228.969 328.078 226.344 328.078 223.531C 328.078 220.719 327.562 218.094 326.531 215.656C 325.5 213.219 324.047 211.109 322.172 209.328C 320.391 207.453 318.281 206 315.844 204.969C 313.406 203.938 310.781 203.422 307.969 203.422L 267.609 203.422C 259.266 203.422 251.438 201.828 244.125 198.641C 236.812 195.453 230.391 191.141 224.859 185.703C 219.422 180.172 215.109 173.75 211.922 166.438C 208.734 159.031 207.141 151.156 207.141 142.812ZM 399.375 284L 359.016 284L 359.016 82.3438L 500.203 82.3438L 500.203 122.703L 399.375 122.703L 399.375 163.062L 459.844 163.062L 459.844 203.422L 399.375 203.422L 399.375 284Z"/>
+          </defs>
+          </svg>
+          <!--<img class = 'background-img' src = '../../res/media/images/photo_2.jpg' alt='Main Page Background'/>-->
+        </div>
+      </div>
+    </div>
+
+    <!--<div class = 'main-header'>WILL_FEHRNSTROM<div class = 'sub-header'>UCLA Student, Developer, and Writer.</div></div>-->
+    <div class = 'links'></div>
+    <div class = 'photos page-section container'>
+      <div class = 'title-line-horizontal'></div>
+      <div class = 'main-heading-container'>
+        <div class = 'title-line-vertical'></div>
+        <div class = 'section-title media-title text'>Media</div>
+        <div class = 'title-line-vertical'></div>
+      </div>
+      <div class = 'title-line-horizontal-bottom'></div>
+      <div class = 'row'>
+        <div class = 'col s12'><img src = '../../res/media/images/photo_4.jpg'/></div>
+        <div class = 'col s12'><img src = '../../res/media/images/photo_2.jpg'/></div>
+        <div class = 'col s12'><img src = '../../res/media/images/photo_3.jpg'/></div>
+        <div class = 'col s12'><img src = '../../res/media/images/photo_5.jpg'/></div>
+        <div class = 'col s12'><img src = '../../res/media/images/photo_6.jpg'/></div>
+        <div class = 'col s12'><img src = '../../res/media/images/photo_8.jpg'/></div>
+      </div>
+    </div>
+    <div class = 'blogs page-section'>
+      <div class = 'container'>
+        <svg class = "subpage-header" width="100%" height=100% viewBox="0 0 508 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Canvas">
+          <g id="BYTE_BY_BYTE">
+            <!-- transform="translate(-258 -79)"-->
+            <use href="#byte_by_byte_text" transform="translate(-4 17)"/>
+          </g>
+          <path id="top-line" d="M 10, 10 H508" fill="transparent" stroke = "black" stroke-width="10"/>
+          <path id="bottom-line" d="M 10, 98 H508" stroke = "black" stroke-width="10"/>
+          <path id="left-line" d="M 15, 5 V103" stroke = "black" transform="translate(-20, 0)"stroke-width="10"/>
+          <path id="right-line" d="M 503, 5 V103" stroke = "black" stroke-width="10"/>
+        <g id="Group">
+        <!-- <g id="BYTE_BY_BYTE">
+          <use href="#path0_fill" transform="translate(-258 -79)"/>
+        </g> -->
+        <!-- <g id="bottom_line">
+        <use href="#path1_stroke" transform="matrix(1 8.74228e-08 -8.74228e-08 1 -287 12)"/>
+        </g>
+        <g id="top_line">
+        <use href="#path1_stroke" transform="matrix(-1 -8.74228e-08 8.74228e-08 -1 217 -96)"/>
+        </g>
+        <g id="left_line">
+        <path id="left-stroke" d="M 0, 0 L 108, 0 L 108, -10 " fill="transparent" stroke="black" stroke-width="11" transform="matrix(-4.37114e-08 1 -1 -4.37114e-08 -287 -96)"/> -->
+        <!--<use href="#path2_stroke" transform="matrix(-4.37114e-08 1 -1 -4.37114e-08 -287 -96)"/>
+        </g>
+        <g id="right_line">
+        <path id="right-stroke" d="M 0, 0 L 108, 0L 108, -10" fill="transparent" stroke="black" stroke-width="5" transform="matrix(1.19249e-08 -1 1 1.19249e-08 217 12)"/>
+        <use href="#path2_stroke"/>-->
+      </g>
+      </g>
+        </g>
+        <defs>
+        <path id="byte_by_byte_text" d="M 4.0625 59L 4.0625 13.5L 20 13.5C 25.5208 13.5 29.7083 14.5625 32.5625 16.6875C 35.4167 18.7917 36.8438 21.8854 36.8438 25.9688C 36.8438 28.1979 36.2708 30.1667 35.125 31.875C 33.9792 33.5625 32.3854 34.8021 30.3438 35.5938C 32.6771 36.1771 34.5104 37.3542 35.8438 39.125C 37.1979 40.8958 37.875 43.0625 37.875 45.625C 37.875 50 36.4792 53.3125 33.6875 55.5625C 30.8958 57.8125 26.9167 58.9583 21.75 59L 4.0625 59ZM 13.4375 39.1875L 13.4375 51.4688L 21.4688 51.4688C 23.6771 51.4688 25.3958 50.9479 26.625 49.9062C 27.875 48.8438 28.5 47.3854 28.5 45.5312C 28.5 41.3646 26.3438 39.25 22.0312 39.1875L 13.4375 39.1875ZM 13.4375 32.5625L 20.375 32.5625C 25.1042 32.4792 27.4688 30.5938 27.4688 26.9062C 27.4688 24.8438 26.8646 23.3646 25.6562 22.4688C 24.4688 21.5521 22.5833 21.0938 20 21.0938L 13.4375 21.0938L 13.4375 32.5625ZM 58.875 34L 68.3438 13.5L 78.5938 13.5L 63.6562 42.5L 63.6562 59L 54.125 59L 54.125 42.5L 39.1875 13.5L 49.4688 13.5L 58.875 34ZM 117.562 21.0938L 103.625 21.0938L 103.625 59L 94.25 59L 94.25 21.0938L 80.5 21.0938L 80.5 13.5L 117.562 13.5L 117.562 21.0938ZM 150.312 39.2812L 132.312 39.2812L 132.312 51.4688L 153.438 51.4688L 153.438 59L 122.938 59L 122.938 13.5L 153.375 13.5L 153.375 21.0938L 132.312 21.0938L 132.312 31.9375L 150.312 31.9375L 150.312 39.2812ZM 183.375 66.0625L 154.906 66.0625L 154.906 59L 183.375 59L 183.375 66.0625ZM 187.5 59L 187.5 13.5L 203.438 13.5C 208.958 13.5 213.146 14.5625 216 16.6875C 218.854 18.7917 220.281 21.8854 220.281 25.9688C 220.281 28.1979 219.708 30.1667 218.562 31.875C 217.417 33.5625 215.823 34.8021 213.781 35.5938C 216.115 36.1771 217.948 37.3542 219.281 39.125C 220.635 40.8958 221.312 43.0625 221.312 45.625C 221.312 50 219.917 53.3125 217.125 55.5625C 214.333 57.8125 210.354 58.9583 205.188 59L 187.5 59ZM 196.875 39.1875L 196.875 51.4688L 204.906 51.4688C 207.115 51.4688 208.833 50.9479 210.062 49.9062C 211.312 48.8438 211.938 47.3854 211.938 45.5312C 211.938 41.3646 209.781 39.25 205.469 39.1875L 196.875 39.1875ZM 196.875 32.5625L 203.812 32.5625C 208.542 32.4792 210.906 30.5938 210.906 26.9062C 210.906 24.8438 210.302 23.3646 209.094 22.4688C 207.906 21.5521 206.021 21.0938 203.438 21.0938L 196.875 21.0938L 196.875 32.5625ZM 242.312 34L 251.781 13.5L 262.031 13.5L 247.094 42.5L 247.094 59L 237.562 59L 237.562 42.5L 222.625 13.5L 232.906 13.5L 242.312 34ZM 290.625 66.0625L 262.156 66.0625L 262.156 59L 290.625 59L 290.625 66.0625ZM 294.75 59L 294.75 13.5L 310.688 13.5C 316.208 13.5 320.396 14.5625 323.25 16.6875C 326.104 18.7917 327.531 21.8854 327.531 25.9688C 327.531 28.1979 326.958 30.1667 325.812 31.875C 324.667 33.5625 323.073 34.8021 321.031 35.5938C 323.365 36.1771 325.198 37.3542 326.531 39.125C 327.885 40.8958 328.562 43.0625 328.562 45.625C 328.562 50 327.167 53.3125 324.375 55.5625C 321.583 57.8125 317.604 58.9583 312.438 59L 294.75 59ZM 304.125 39.1875L 304.125 51.4688L 312.156 51.4688C 314.365 51.4688 316.083 50.9479 317.312 49.9062C 318.562 48.8438 319.188 47.3854 319.188 45.5312C 319.188 41.3646 317.031 39.25 312.719 39.1875L 304.125 39.1875ZM 304.125 32.5625L 311.062 32.5625C 315.792 32.4792 318.156 30.5938 318.156 26.9062C 318.156 24.8438 317.552 23.3646 316.344 22.4688C 315.156 21.5521 313.271 21.0938 310.688 21.0938L 304.125 21.0938L 304.125 32.5625ZM 349.562 34L 359.031 13.5L 369.281 13.5L 354.344 42.5L 354.344 59L 344.812 59L 344.812 42.5L 329.875 13.5L 340.156 13.5L 349.562 34ZM 408.25 21.0938L 394.312 21.0938L 394.312 59L 384.938 59L 384.938 21.0938L 371.188 21.0938L 371.188 13.5L 408.25 13.5L 408.25 21.0938ZM 441 39.2812L 423 39.2812L 423 51.4688L 444.125 51.4688L 444.125 59L 413.625 59L 413.625 13.5L 444.062 13.5L 444.062 21.0938L 423 21.0938L 423 31.9375L 441 31.9375L 441 39.2812Z"/>
+        <!-- <path id="path1_stroke" d="M 0 0L 504 0L 504 -10L 0 -10L 0 0Z"/> -->
+        <style>
+          #path1_stroke {
+            stroke-dasharray: 20;
+          }
+        </style>
+        <path id="path2_stroke" d="M 0 0L 108 0L 108 -10L 0 -10L 0 0Z" stroke-width="1"/>
+        </defs>
+        </svg>
+        <!-- <div class = 'title-line-horizontal'></div>
+        <div class = 'main-heading-container'>
+          <div class = 'title-line-vertical'></div>
+          <div class = 'section-title text'>BYTE_BY_BYTE</div>
+          <div class = 'title-line-vertical'></div>
+        </div>
+        <div class = 'title-line-horizontal-bottom'></div>-->
+        <article class = 'post' id = 'post01' data-blog-type= 'personal'>
+          <div class = 'color-banner'></div>
+          <div class = 'blog-header-2'>
+            <div>
+              <div class = 'header-sub-container'>
+                <div class = 'blog-title text'>Dereflection.</div>
+                <div class = 'blog-number text'>   |01</div>
+              </div>
+              <div class = 'blog-date text'> 00:41 Dec. 22, 2017</div>
+            </div>
+            <div class = 'meta-opts'>
+              <div class='chip'>
+                <img src='../../res/media/images/Linkedin_prof_pic.jpg' alt='Contact Person'>
+                Will Fehrnstrom
+              </div>
+            </div>
+          </div>
+          <div class = 'blog-writing text'>
+            Lorem ipsum dolor sit amet, munere aperiri
+            deseruisse sea ex. Ad vide dicit persius vis.
+            An tamquam disputando contentiones usu, wisi
+            consectetuer et cum. Dicam quando eos ad, te
+            adipisci contentiones definitionem pro, ius an
+            nullam referrentur voluptatibus. Augue causae
+            menandri ea has. Eu per sint ceteros assueverit.
+          </div>
+          <div class = 'tags'>
+            <h4 style = 'overflow: hidden'>Tags</h4>
+            <div class='chip'>
+              Personal
+            </div>
+            <div class='chip'>
+              Coding
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class = 'resume page-section'>
+      <div class = 'row'>
+        <div class = 'col offset-m2 s12 m8'>
+          <div class = 'title-line-horizontal'></div>
+          <div class = 'main-heading-container'>
+            <div class = 'title-line-vertical'></div>
+            <div class = 'section-title text'>EXPERIENCE</div>
+            <div class = 'title-line-vertical'></div>
+          </div>
+          <div class = 'title-line-horizontal-bottom'></div>
+        </div>
+        <div id = 'significant-projects' class = 'header center-align z-depth-2'><span class = 'header-text'>Significant Work</span></div>
+        <div class = 'col offset-m2 s12 m8'>
+          <div class = 'card'>
+            <div class = 'card-content'>
+              <span class = 'card-title'><strong>Project</strong></span>
+              <img class = 'github-logo' src = '../../res/logos/GitHub-Logos/GitHub_Logo.png' alt= 'Github Logo'/>
+              <div class = 'card-divider'></div>
+              <span class = 'card-subheader'><strong>Metrics</strong></span><br>
+              <span class = 'card-subheader'><strong>Synopsis</strong></span><br>
+              <p>This was a difficult project because it took a really long time and I had to adjust so many
+              tiny details about this site to get it just right.  This is the result of my blood, sweat, and tears.
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <!-- END SIGNIFICANT-WORK-->
+        <div id = 'skillset' class = 'header z-depth-2'><span class = 'header-text'>Skillset</span></div>
+        <!-- END SKILLSET-->
+        <div id = 'honors' class = 'header z-depth-2'><span class = 'header-text'>Honors and Accolades</span></div>
+      </div>
+    </div>
+    <div class = 'about-me'>
+
+    </div>
+    <!--<div class = 'menu container'>
+      <div class = 'row menu-row center-align'>
+        <a id = 'about-me-link' class = 'nav-button menu-item waves-effect waves-light col s12 m3 l3'>
+          <div class = 'menu-bar-text'>About Me</div>
+        </a>
+        <a id = 'resume-link' class = 'nav-button menu-item waves-effect waves-light col s12 m3 l3'>
+          <div class ='menu-bar-text'>Experience</div>
+        </a>
+        <a id = 'media-link' class = 'nav-button menu-item waves-effect waves-light col s12 m3 l3'>
+          <div class ='menu-bar-text'>Media</div>
+        </a>
+        <a id = 'blog-link' class = 'nav-button menu-item waves-effect waves-light col s12 m3 l3'>
+          <div class ='menu-bar-text'>Blog</div>
+        </a>
+      </div>
+    </div>-->
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
