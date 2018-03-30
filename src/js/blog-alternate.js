@@ -22,8 +22,6 @@ $(document).ready(function(){
   headerShow($('.title').text());
   // check which banners are in view of the window
   animateAllVisibleBanners();
-  // populate scrollbar according to the types of blogs
-  populateScrollbar($('.post'), $('.blogs'));
   // color the banners for the page
   colorBanners();
 
@@ -39,9 +37,12 @@ $(document).ready(function(){
   var share_buttons = document.querySelectorAll('.blog-share-button');
 
   // on clicking the link to any of the pages, trigger a header animation
+  var blog_animated = false;
   $('.nav-button').on('click', function(){
-    resetBlogHeaderAnimation();
-    animateBlogHeader();
+    //resetBlogHeaderAnimation();
+    console.log(blog_animated);
+    animateBlogHeader(blog_animated);
+    blog_animated = true;
   });
 
   // on hovering over any of the blog aux share buttons
@@ -106,30 +107,46 @@ $(document).ready(function(){
     metricClicks++;
   });
 
-  function resetBlogHeaderAnimation(){
-    $('.title-line-vertical').css('display', 'none');
-    $('.title-line-horizontal').css('display', 'none');
-    //$('.title-line-vertical:first-of-type').css('margin-top', '215%');
-    //$('.title-line-vertical:last-of-type').css('margin-bottom', '215%');
-    $('.title-line-horizontal-bottom').css('margin-left', '100vw');
-    $('.title-line-horizontal:first-of-type').width(0);
+  function animateBlogHeader(beenAnimated){
+    let animationDuration = 3000;
+    // if we have not animated this header before, animate it
+    // checks the stroke offset of the top line on the svg logo to see if it has no offset
+    // if it doesn't, then we've already animated this
+    if(parseInt($('#top-line').css('stroke-dashoffset')) !== 0 && !beenAnimated){
+      $('#top-line').animate({
+        'stroke-dashoffset': '0'
+      }, animationDuration, function(){
+        $('#top-line').css('stroke-dashoffset', '0');
+      });
+      var horizontal_line_offset = $('#bottom-line').css('stroke-dashoffset');
+      $('#bottom-line').animate({
+        'stroke-dashoffset': `${document.querySelector('#bottom-line').getTotalLength() + parseInt(horizontal_line_offset)}`
+      }, animationDuration, function(){
+        $('#bottom-line').css('stroke-dashoffset', `${document.querySelector('#bottom-line').getTotalLength() + parseInt(horizontal_line_offset)}`);
+      });
+      var vertical_line_offset = $('#left-line').css('stroke-dashoffset');
+      $('#left-line').animate({
+        'stroke-dashoffset': `${document.querySelector('#left-line').getTotalLength() + parseInt(vertical_line_offset)}`
+      }, animationDuration, function(){
+        $('#left-line').css('stroke-dashoffset', `${document.querySelector('#left-line').getTotalLength() + parseInt(vertical_line_offset)}`);
+      });
+      $('#right-line').animate({
+        'stroke-dashoffset': '0'
+      }, animationDuration, function(){
+        $('#right-line').css('stroke-dashoffset', '0');
+      });
+      setTimeout(finishBlogHeaderAnimation, animationDuration, horizontal_line_offset, vertical_line_offset);
+    }
   }
 
-  function animateBlogHeader(){
-    $('#top-line').animate({
-      'stroke-dashoffset': '0'
-    }, 3000, 'easeOutQuad');
-    var horizontal_line_offset = $('#bottom-line').css('stroke-dashoffset');
-    $('#bottom-line').animate({
-      'stroke-dashoffset': `${2*parseInt(horizontal_line_offset)}`
-    }, 3000, 'easeOutQuad');
-    var vertical_line_offset = $('#left-line').css('stroke-dashoffset');
-    $('#left-line').animate({
-      'stroke-dashoffset': `${2*parseInt(vertical_line_offset)}`
-    }, 3000, 'easeOutQuad');
-    $('#right-line').animate({
-      'stroke-dashoffset': '0'
-    }, 3000, 'easeOutQuad');
+  function finishBlogHeaderAnimation(horizontal_line_offset, vertical_line_offset){
+    // get the new accurate length of the bottom and left strokes by taking the total lengths and subtracting from them the change in offset from beginning to now
+    let bottomLength = document.querySelector('#bottom-line').getTotalLength() - Math.abs(horizontal_line_offset - parseInt($('#bottom-line').css('stroke-dashoffset')));
+    let leftLength = document.querySelector('#left-line').getTotalLength() - Math.abs(vertical_line_offset - parseInt($('#left-line').css('stroke-dashoffset')));
+    $('#top-line').css('stroke-dashoffset', '0');
+    $('#bottom-line').css('stroke-dashoffset', `${bottomLength + parseInt($('#bottom-line').css('stroke-dashoffset'))}`);
+    $('#left-line').css('stroke-dashoffset', `${leftLength + parseInt($('#left-line').css('stroke-dashoffset'))}`);
+    $('#right-line').css('stroke-dashoffset', '0');
   }
 
   function headerShow(text){
@@ -157,38 +174,6 @@ $(document).ready(function(){
           clearInterval(transform);
         }
       }, 140);
-  }
-
-
-  //Populate scrollbar with blog information
-  // elements: a list of elements to populate the scrollbar according to.
-  // section: the entire section in which the elements are contained.
-  function populateScrollbar(elements, section){
-    var numPosts = elements.length; // $('.posts')
-    var sectionHeight = section.height(); // $('.blogs')
-    var heightPercentages = [];
-    for(var i = 0; i < numPosts; i++){
-      var element = $(`.${elements.attr('class')}:nth-of-type(${i + 1})`);
-      var elementHeight = $(element).height();
-      if(elementHeight !== 0){
-        // heightPercentages.push(elementHeight/sectionHeight);
-        // var scrollDiv = document.createElement('div');
-        // var scrollLink = document.createElement('a');
-        // $('.blog-scroller').append(scrollLink);
-        // $(scrollLink).addClass('scroll-link');
-        // $('.scroll-link').append(scrollDiv);
-        // $(scrollDiv).addClass('scroll-div');
-        // $(scrollLink).height(`${heightPercentages[i] * 100}%`);
-        // $(scrollLink).attr('href', `#${$(element).attr('id')}`);
-        // $(scrollDiv).height('100%');
-        // //var color = colorMap.get(element[0].dataset.blogType);
-        // $(scrollLink).css('background-color', `${color}`);
-      }
-    }
-  }
-
-  function depopulateScrollbar(section){
-    $('.scroll-link').remove();
   }
 
   function colorBanners(){
@@ -245,7 +230,7 @@ $(document).ready(function(){
     var banner = banners[i];
     $(banner).animate({
       width: '100%'
-    }, 2500, 'swing');
+    }, 2500);
   }
 
   function blogBannerInView(index){
@@ -361,6 +346,36 @@ $(document).ready(function(){
     var pageHeight = $('.page').height();
     $('.metrics').height(`${metricsHeight}${units}`);
     return pageHeight;
+  }
+
+  function revealPostHeader(post){
+    let header = $(post).find('.blog-header-2');
+    if(header.height() == 0){
+      $(header).animate({
+        'height': '100%',
+        'opacity': '100'
+      }, 1000);
+    }
+  }
+
+  function revealPost(post){
+    let postContent = $(post).find('.blog-content');
+    if(postContent){
+      $(postContent).animate({
+        'height':'100%',
+        'opacity':'100'
+      }, 1000);
+    }
+  }
+
+  function hidePost(post){
+    let postContent = $(post).find('.blog-content');
+    if(postContent){
+      $(postContent).animate({
+        'height':'0',
+        'opacity':'0'
+      }, 1000);
+    }
   }
 
 });

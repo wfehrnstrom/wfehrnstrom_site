@@ -1,0 +1,15 @@
+<svg width="62" height="152" viewBox="0 0 62 152" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Vector</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(1 151)">
+<rect x="-1" y="-151" width="62" height="152"/>
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(0 -150)" fill="#EFEFEF"/>
+<use xlink:href="#path1_stroke" transform="translate(0 -150)" fill="#EFEFEF"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 33.1722 0L 0 150L 33.1722 150L 60 0L 33.1722 0Z"/>
+<path id="path1_stroke" d="M 0 150L -0.488204 149.892L -0.622655 150.5L 0 150.5L 0 150ZM 33.1722 0L 33.1722 -0.5L 32.7707 -0.5L 32.684 -0.107965L 33.1722 0ZM 60 0L 60.4922 0.0880291L 60.5974 -0.5L 60 -0.5L 60 0ZM 33.1722 150L 33.1722 150.5L 33.5907 150.5L 33.6644 150.088L 33.1722 150ZM 0.488204 150.108L 33.6604 0.107965L 32.684 -0.107965L -0.488204 149.892L 0.488204 150.108ZM 33.1722 0.5L 60 0.5L 60 -0.5L 33.1722 -0.5L 33.1722 0.5ZM 59.5078 -0.0880291L 32.68 149.912L 33.6644 150.088L 60.4922 0.0880291L 59.5078 -0.0880291ZM 33.1722 149.5L 0 149.5L 0 150.5L 33.1722 150.5L 33.1722 149.5Z"/>
+</defs>
+</svg>

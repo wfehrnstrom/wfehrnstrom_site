@@ -60,7 +60,7 @@
 
 .text {
   font-family: 'Raleway', 'Roboto', sans-serif;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .header {
@@ -209,6 +209,7 @@
 }
 
 .blog-title {
+  color: #2F2F2F;
   font-weight: 800;
   overflow: visible;
 }
