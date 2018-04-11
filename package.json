@@ -1,0 +1,29 @@
+{
+  "name": "will-fehrnstrom-website",
+  "version": "1.0.0",
+  "description": "Will Fehrnstrom's Personal Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wfehrnstrom/wfehrnstrom_site.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Will Fehrnstrom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wfehrnstrom/wfehrnstrom_site/issues"
+  },
+  "homepage": "https://github.com/wfehrnstrom/wfehrnstrom_site#readme",
+  "dependencies": {
+    "aos": "^2.2.0",
+    "chart.js": "^2.7.2",
+    "hashids": "^1.1.4",
+    "jquery": "^3.3.1",
+    "materialize-css": "^0.100.2"
+  }
+}

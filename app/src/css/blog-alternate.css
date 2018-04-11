@@ -50,10 +50,6 @@
   height: 100%;
 }
 
-.icon {
-  width: inherit;
-}
-
 .share-button {
   height: 100%;
 }
@@ -94,7 +90,7 @@
 
 .tags {
   height: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .color-banner{
@@ -229,6 +225,7 @@
   font-size: 3vmin;
   margin-top: 15px;
   padding-bottom: 5px;
+  font-weight: normal;
 }
 
 .blog-scroller {

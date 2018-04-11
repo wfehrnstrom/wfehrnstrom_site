@@ -22,40 +22,41 @@ $(document).ready(function(){
   }
 
   function animateMainLogo(){
-    var animationDuration = 2000;
-    var delay = animationDuration;
-    // Bring down the left stroke on logo
-    $('#left_rect_stroke').delay(delay).animate({
-      'stroke-dashoffset': '0'
-    }, animationDuration);
-    delay += animationDuration;
+    // if animations have not been disabled
+    if(!$("#start-animation-switch input[type=checkbox]").is(':checked')){
+      // Bring down the left stroke on logo
+      $('#left_rect_stroke').delay(500).animate({
+        'stroke-dashoffset': '0'
+      }, 500);
+    }
+    else{
+      $('#left_rect_stroke').css('stroke-dashoffset', '0');
+    }
     // If we're not on mobile, move the logo up to the header bar
     if($(document).width() > 500){
-      // Switch logo to absolutely positioned
-      var offset = $('#logo-svg').offset();
-      $('#logo-svg').css({'right': `${offset.right}`, 'top':`${offset.top}`});
-      $('.background-col').css('justify-content', 'space-around');
-      // Translate the logo to the top after it is done animating
-      $('#logo-svg').delay(delay).animate({
-        'right': '10px',
-        'top': '10px',
+      $('#logo-svg').css({
         'width': `${$('#logo-svg').width()/3}`
-      }, animationDuration);
-      delay += animationDuration;
-      $('#logo-svg').delay(delay).css('position', 'absolute');
+      });
+      $('#logo-svg').css('position', 'absolute');
     }
-    setTimeout(animateMenuItems, delay);
-    setTimeout(enablePageLinks, delay);
-    setTimeout(function(){
-      $('.background-main-text').css('visibility', 'visible');
-      $('.background-divider').height($('.background-col').height());
-      $('.background-divider').css('display', 'inline-block');
-    }, delay);
+    animateMenuItems();
+    enablePageLinks();
+    $('.background-main-text').css('visibility', 'visible');
+    $('.background-divider').height($('.background-col').height());
+    $('.background-divider').css('display', 'inline-block');
   }
 
   function animateMenuItems(){
     var menuText = document.querySelectorAll('.menu-bar-text');
-    let delayIncrement = 750;
+    var delayIncrement;
+    if(!$("#start-animation-switch input[type=checkbox]").is(':checked')){
+      delayIncrement = 750;
+    }
+    else{
+      delayIncrement = 0;
+      $('.menu').css('animation', 'none');
+      $('.menu').css('background-color', '#FFFFFF');
+    }
     let delay = 0;
     let animationDuration = delayIncrement * 2;
     var index = 0;
@@ -106,10 +107,8 @@ $(document).ready(function(){
 
   function showPage(pageClass){
     var pages = $('.page-section');
-    console.log(pages);
     pages.each(function(){
       if($(this).hasClass(pageClass)){
-        console.log(pageClass);
         $(this).css('display', 'block');
       }
       else{
@@ -119,7 +118,6 @@ $(document).ready(function(){
   }
 
   function enablePageLink(pageClass){
-    console.log('PAGE CLASS: ' + `.${pageClass}`);
     if($(`#${pageClass}-link`) !== null){
       $(`#${pageClass}-link`).on("click", function(){
         showPage(pageClass);
@@ -142,8 +140,7 @@ $(document).ready(function(){
     }
   }
 
-  function arrangeGrid(id){
-    var count = 0;
+  function sizeGridPhotos(id){
     $(id).find('.col').each(function(){
       var image = $(this).find('img')[0];
       if(image){
@@ -151,13 +148,13 @@ $(document).ready(function(){
         var img_width = image.naturalWidth;
         var ratio = img_width/img_height;
         if(ratio < 1){
-          $(this).addClass(`l4`);
+          $(this).addClass(`m4`);
         }
         else if(ratio < 1.5){
-          $(this).addClass(`l6`);
+          $(this).addClass(`m6`);
         }
         else{
-          $(this).addClass(`l12`);
+          $(this).addClass(`m12`);
         }
       }
     });
@@ -173,7 +170,7 @@ $(document).ready(function(){
     return -1;
   }
 
-  function styleBasedOnAspect(image){
+  function styleBasedOnAspect(image, height = '70vh'){
     let aspectRatio = getAspectRatio(image);
     // if the aspect ratio is a valid number
     if(aspectRatio !== -1){
@@ -181,13 +178,21 @@ $(document).ready(function(){
       if(aspectRatio >= 1){
         $(image).css('width', '100%');
       }
-      $(image).css('height', '70vh');
+      $(image).css('height', height);
     }
   }
 
-  function arrangeGrid(){
-    let media = $('.media .grid').find('.col');
-    media.each(function(){
+  function arrangeGrid(grid, height){
+    let gridItems = $(grid).find('.col');
+    gridItems.each(function(){
+      let image = $(this).find('img')[0];
+      styleBasedOnAspect(image, height);
+    });
+  }
+
+  function arrangeAllGrids(){
+    let gridItems = $('.grid').find('.col');
+    gridItems.each(function(){
       let image = $(this).find('img')[0];
       styleBasedOnAspect(image);
     });
@@ -195,18 +200,70 @@ $(document).ready(function(){
 
   function initializeMaterialBox(){
     var gridElements = document.querySelectorAll('.grid .grid-item .materialboxed');
-    var options = {
-      'onCloseEnd': arrangeGrid
-    };
     gridElements.forEach(function(el){
+      let parentGrid = $(el).closest('.grid')
+      var height = '70vh';
+      if(parentGrid.closest('.projects').length !== 0){
+        height = '30vh';
+      }
+      var options = {
+        'onCloseEnd': function(){arrangeGrid($(el).closest('.grid'), height);}
+      };
       var instance = M.Materialbox.init(el, options);
     });
   }
 
+  function startCallbacks(){
+    // settings configuration callback
+    $('.settings-icon').click(function(){
+      if($('.settings-panel').css('opacity') === '0'){
+        $('.settings-panel').animate({
+          'opacity': '100'
+        }, 500);
+      }
+      else{
+        $('.settings-panel').animate({
+          'opacity': '0'
+        }, 500);
+      }
+    });
+    // return button click callback
+    $('.scroll-up').click(function(){
+      $('html, body').animate({
+        scrollTop: $('#main-menu').offset().top
+      }, 1000);
+    });
+    // glitch effect random timing
+    $('#no-filter').mouseover(function(){
+      let randomTime = Math.random() * (0.5 - 0.3) + 0.3;
+      $('#blue-filter, #magenta-filter').css('animation-duration', `${randomTime}s`);
+    });
+  }
+
+  function configureSettings(){
+    $("#start-animation-switch input[type=checkbox]").prop('checked', false);
+  }
+
   function initPage(){
+    // Initialize Firebase
+    var config = {
+      apiKey: 'AIzaSyB-HwYKQL8bZUgmpkwt2OOTFwWS4K9XymE',
+      authDomain: 'website-ba0ae.firebaseapp.com',
+      databaseURL: 'https://website-ba0ae.firebaseio.com',
+      projectId: 'website-ba0ae',
+      storageBucket: 'website-ba0ae.appspot.com',
+      messagingSenderId: '1033996135819'
+    };
+    firebase.initializeApp(config);
+    AOS.init();
+    $('.parallax').init();
+    configureSettings();
     initializeMaterialBox();
     initializeHeaderStrokes();
     animateMainLogo();
+    startCallbacks();
+    arrangeGrid('.media .grid', '70vh');
+    arrangeGrid('.projects .grid', '30vh');
   }
 
   initPage();

@@ -35,12 +35,7 @@ $(document).ready(function(){
     return smallestHeight;
   }
 
-  function arrangeGrid(id){
-    let media = $(id).find('.col');
-    media.each(function(){
-      let image = $(this).find('img')[0];
-      styleBasedOnAspect(image);
-    });
-  }
-  arrangeGrid('.media .grid');
+
+  // arrangeGrid('.media .grid');
+  // arrangeGrid('.projects .grid');
 });

@@ -5,43 +5,36 @@
   <meta name='author' content='Will Fehrnstrom'/>
   <meta name='description' content='Will Fehrnstrom is an Undergraduate at UCLA. He is a Full Stack Developer from Orinda, CA.'/>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <!-- Styles -->
   <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/>
-  <link rel='stylesheet' href='../css/styles_2.css'/>
-  <link rel='stylesheet' href='../css/blog-alternate.css'/>
-  <link rel='stylesheet' href='../css/projects.css'/>
-  <link rel='stylesheet' href='../css/media.css'/>
-  <link rel='stylesheet' href='../../lib/materialize/css/materialize.min.css'>
+  <link rel='stylesheet' href='/lib/materialize/css/materialize.min.css'>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css'>
+  <link rel='stylesheet' href='/lib/aos.css'/>
   <link href='https://fonts.googleapis.com/css?family=Raleway:100, 200' rel='stylesheet'>
+  <link rel='stylesheet' href='/app/src/css/styles_2.css'/>
+  <link rel='stylesheet' href='/app/src/css/blog-alternate.css'/>
+  <link rel='stylesheet' href='/app/src/css/projects.css'/>
+  <link rel='stylesheet' href='/app/src/css/media.css'/>
+  <link rel='stylesheet' href='/app/src/css/resume.css'/>
+  <!-- JS/Frameworks -->
   <script src='https://www.gstatic.com/firebasejs/4.11.0/firebase.js'></script>
   <script src='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js'></script>
-  <script type='text/javascript' src='../../lib/jquery-3.2.1.min.js'></script>
-  <script type='text/javascript' src='../../lib/materialize/js/materialize.min.js'></script>
-  <script type='text/javascript' src='../js/blog-alternate.js'></script>
-  <script type='text/javascript' src='../js/index_2.js'></script>
-  <script type='text/javascript' src='../js/post.js'></script>
-  <script type='text/javascript' src='../js/projects.js'></script>
-  <script type='text/javascript' src='../js/logo.js'></script>
-  <script type='text/javascript' src='../js/media.js'></script>
-  <script type='text/javascript' src='../../lib/hashids.min.js'></script>
+  <script type='text/javascript' src='/lib/jquery-3.2.1.min.js'></script>
+  <script type='text/javascript' src='/lib/materialize/js/materialize.min.js'></script>
+  <script type='text/javascript' src='/lib/hashids.min.js'></script>
+  <script type='text/javascript' src='/lib/aos.js'></script>
+  <script type='text/javascript' src='/app/src/js/blog-alternate.js'></script>
+  <script type='text/javascript' src='/app/src/js/index_2.js'></script>
+  <script type='text/javascript' src='/app/src/js/post.js'></script>
+  <script type='text/javascript' src='/app/src/js/projects.js'></script>
+  <script type='text/javascript' src='/app/src/js/logo.js'></script>
+  <script type='text/javascript' src='/app/src/js/media.js'></script>
   <title>Will Fehrnstrom</title>
 </head>
 <body>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: 'AIzaSyB-HwYKQL8bZUgmpkwt2OOTFwWS4K9XymE',
-      authDomain: 'website-ba0ae.firebaseapp.com',
-      databaseURL: 'https://website-ba0ae.firebaseio.com',
-      projectId: 'website-ba0ae',
-      storageBucket: 'website-ba0ae.appspot.com',
-      messagingSenderId: '1033996135819'
-    };
-    firebase.initializeApp(config);
-  </script>
   <header></header>
   <main>
-    <div class = 'container menu'>
+    <div id = 'main-menu' class = 'container menu'>
       <a id = 'about-me-link' class = 'nav-button menu-item waves-effect waves-light'>
           <div class = 'menu-bar-text'>About Me</div>
       </a>
@@ -56,9 +49,33 @@
       </a>
     </div>
     <div class = 'container page-background'>
+      <div class = 'settings-icon icon'><img src = '/res/logos/gear.svg'/></div>
+      <div class = 'settings-panel z-depth-2'>
+        <h6>Disable Starting Animation</h6>
+        <div id = 'start-animation-switch' class="switch">
+          <label>
+            Off
+            <input type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+      </div>
       <div class = 'background-row row'>
         <div class = 'background-col col s12'>
-          <div class = 'background-main-text'>WILL FEHRNSTROM</div>
+          <div class = 'cross-hatching'><img src = '/res/logos/cross-hatching.svg'/></div>
+          <div class = 'img-glitch'>
+            <!-- <div class = 'glitch-layer background-img'></div>
+            <div class = 'glitch-layer background-img'></div>
+            <div class = 'glitch-layer background-img'></div> -->
+            <div class = 'glitch-layer background-img'></div>
+            <!-- <div class = 'glitch-layer background-img'></div> -->
+          </div>
+          <div class = 'background-text-wrapper'>
+            <div id = 'no-filter' class = 'background-main-text'>WILL FEHRNSTROM</div>
+            <div id = 'blue-filter' class = 'background-main-text'>WILL FEHRNSTROM</div>
+            <div id = 'magenta-filter' class = 'background-main-text'>WILL FEHRNSTROM</div>
+          </div>
           <svg id = "logo-svg" viewBox="0 0 637 206" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g id="main-logo-group" transform="translate(576 -562)">
           <g id="Group">
@@ -90,16 +107,19 @@
       </div>
     </div>
     <div class = 'media page-section container' data-visited = "false">
+      <div class = 'scroll-up' data-aos='fade-up'><img class = 'up-img' src = '/res/logos/arrow_up.svg'/></div>
       <div class = 'grid row'>
-        <div class = 'grid-item col s12 m4'><img class = 'materialboxed' src = '../../res/media/images/photo_4.jpg'/></div>
-        <div class = 'grid-item col s12 m8'><img class = 'materialboxed' src = '../../res/media/images/photo_2.jpg'/></div>
-        <div class = 'grid-item col s12 m8'><img class = 'materialboxed' src = '../../res/media/images/photo_3.jpg'/></div>
-        <div class = 'grid-item col s12 m4'><img class = 'materialboxed' src = '../../res/media/images/photo_5.jpg'/></div>
-        <div class = 'grid-item col s12 m4'><img class = 'materialboxed' src = '../../res/media/images/photo_6.jpg'/></div>
-        <div class = 'grid-item col s12 m4'><img class = 'materialboxed' src = '../../res/media/images/photo_8.jpg'/></div>
+        <div class = 'grid-item col s12 l4'><img class = 'materialboxed' src = '/res/media/images/photo_4.jpg'/></div>
+        <div class = 'grid-item col s12 l8'><img class = 'materialboxed' src = '/res/media/images/photo_2.jpg'/></div>
+        <div class = 'grid-item col s12 l8'><img class = 'materialboxed' src = '/res/media/images/photo_3.jpg'/></div>
+        <div class = 'grid-item col s12 l4'><img class = 'materialboxed' src = '/res/media/images/photo_5.jpg'/></div>
+        <div class = 'grid-item col s12 l4'><img class = 'materialboxed' src = '/res/media/images/photo_6.jpg'/></div>
+        <div class = 'grid-item col s12 l8'><img class = 'materialboxed' src = '/res/media/images/HOTH_2018.jpg'/></div>
+        <div class = 'grid-item col s12 l4'><img class = 'materialboxed' src = '/res/media/images/photo_8.jpg'/></div>
       </div>
     </div>
     <div class = 'blogs page-section' data-visited="false">
+      <div class = 'scroll-up' data-aos='fade-up'><img class = 'up-img' src = '/res/logos/arrow_up.svg'/></div>
       <div class = 'container'>
         <svg class = "subpage-header" width="100%" height=100% viewBox="0 0 508 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Canvas">
@@ -135,7 +155,7 @@
               </div>
               <div class = 'meta-opts'>
                 <div class='chip'>
-                  <img src='../../res/media/images/Linkedin_prof_pic.jpg' alt='Contact Person'>
+                  <img src='/res/media/images/Linkedin_prof_pic.jpg' alt='Contact Person'>
                   Will Fehrnstrom
                 </div>
               </div>
@@ -150,7 +170,7 @@
               menandri ea has. Eu per sint ceteros assueverit.
             </div>
             <div class = 'tags'>
-              <h4 style = 'overflow: hidden; color: #2F2F2F'>Tags</h4>
+              <h4 style = 'color: #2F2F2F'>Tags</h4>
               <div class='chip'>
                 Personal
               </div>
@@ -163,40 +183,82 @@
       </div>
     </div>
     <div class = 'resume page-section' data-visited="false">
-      <div class = 'row'>
-        <div class = 'col offset-m2 s12 m8'>
-          <div class = 'title-line-horizontal'></div>
-          <div class = 'main-heading-container'>
-            <div class = 'title-line-vertical'></div>
-            <div class = 'section-title text'>EXPERIENCE</div>
-            <div class = 'title-line-vertical'></div>
-          </div>
-          <div class = 'title-line-horizontal-bottom'></div>
-        </div>
-        <div id = 'significant-projects' class = 'header center-align z-depth-2'><span class = 'header-text'>Significant Work</span></div>
-        <div class = 'col offset-m2 s12 m8'>
-          <div class = 'card'>
-            <div class = 'card-content'>
-              <span class = 'card-title'><strong>Project</strong></span>
-              <img class = 'github-logo' src = '../../res/logos/GitHub-Logos/GitHub_Logo.png' alt= 'Github Logo'/>
-              <div class = 'card-divider'></div>
-              <span class = 'card-subheader'><strong>Metrics</strong></span><br>
-              <span class = 'card-subheader'><strong>Synopsis</strong></span><br>
-              <p>This was a difficult project because it took a really long time and I had to adjust so many
-              tiny details about this site to get it just right.  This is the result of my blood, sweat, and tears.
-              </p>
+      <div class = 'scroll-up' data-aos='fade-up'><img class = 'up-img' src = '/res/logos/arrow_up.svg'/></div>
+      <div class = 'container'>
+        <div class = 'projects row'>
+          <div class = 'col s12'>
+            <div class = 'project' data-name='Quadcopter' data-status='future-work'>
+              <div class = 'project-header card'>
+                <div class = 'project-title'>Quadcopter</div>
+                <div class = 'project-date'>March 2016 - August 2017</div>
+                <a class = 'link' style='width: 75px;' href='#' onclick='return false;'><img src = '/res/logos/GitHub-Logos/GitHub_Logo.png'/></a>
+              </div>
+              <div class = 'project-subtitle'>Background</div>
+              <div class = 'project-summary'><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Around the beginning of 2016, I became very interested in the software and hardware workings of autonomous vehicles. This was primarily due to increasing public interest in unmanned aerial systems and their applications.  In addition, many of my friends had purchased professional grade drones at the time.  I figured it would be more informative to try to build one.  A colleague was able to get me a defunct 3DR DIY octocopter, and I set about refurbishing it, rebuilding the chassis and purchasing materials missing from the frame.  This also involved isolating problems with all of the motors, scrapping the broken motors and putting new motors in their place, significantly reconfiguring and resoldering in the process.  During test flights, the octocopter performed subnominally, often losing the nuts securing propellers midflight.  This I traced to significant wear on the motor adapters that I had salvaged.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Following a loss of all of the motor's "magic smoke" on another test flight, I once again scrapped the drone, and transformed it into a quadcopter configuration.  This became easier to manage; with 4 motors instead of 8, it became much easier to pinpoint issues.  A second round of refurbishing and materials procurement followed. Communications systems, GPS, flight controller, and motors were all tested intensively.  After assessment of flight readiness, several test flights were coordinated with local air traffic control in Rye, NH.  The quadcopter performed nominally in maneuvers, and the feasibility of assisted flight modes were tested (acrobatics, stabilize, location hold, and full mission auto).  In acro, and stabilize, systems were nominal.  In full mission auto and location hold, GPS HDOP varied too wildly and unpredictably to reliably carry out a mission.  This occured despite good power plane isolation with a copper plate.  The issue appears to be isolated to the GPS itself, and a more accurate one is needed to reliably perform unmanned maneuvers.  This is not cost-effective, as I will be building additional UAS platforms to build upon my knowledge soon in the future. This was certainly not an easy project, and I feel very happy to have persisted with it despite some serious low points (at one point I became the butt of jokes at my high school for my seemingly never ending technological setbacks during flight trials). I am thankful to my friends for assisting me in tracing issues with the vehicle's wiring.</p></div>
+              <div class = 'horizontal-spacer'></div>
+              <div class = 'project-subtitle'>Technical Challenges and Solutions</div>
+              <div class = 'project-challenges'><p><strong>Challenge:</strong> Pick a reliable platform on which to base much of the drone's hardware.
+              <br><strong>Solution:</strong> I chose 3DR as my flight platform and this was almost completely because of my easy procurement of a pixhawk and some other 3DR resources from a friend.  This led to issues down the line, since 3DR was in the midst of discontinuing their hardware division, and replacement materials were hard to find.</p></div>
+            </div>
+            <div class = 'project' data-name='lidar' data-status='future-work'>
+              <div class = 'project-header card'>
+                <div class = 'project-title'>LIDAR Agricultural Analysis</div>
+                <div class = 'project-date'>June 2016-October 2016</div>
+                <a class = 'link' style='width: 75px;' href='https://github.com/wfehrnstrom/AgriGate'><img src = '/res/logos/GitHub-Logos/GitHub_Logo.png'/></a>
+              </div>
+              <div class = 'project-subtitle'>Developed with the help of ArgenTech</div>
+              <div class = 'horizontal-spacer'></div>
+              <div class = 'project-subtitle'>Background</div>
+              <div class = 'project-summary'><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I was initially made aware of LIDAR technology though peripherally aware of it, when I met with a representative of ArgenTech.  We discussed the potential applications of LIDAR technology with relation to agriculture.  On my own, I further researched what sorts of data LIDAR provides for an end user of data and the variety of different LIDAR systems available and their advantages and disadvantages.  A preliminary cost-benefit analysis I worked on showed promise for commercially viable LIDAR equipped drones to save farmers significant amounts of money by pinpoint targeting areas of stress in a crop field, assisted by the metrics that LIDAR provides, which can then be extrapolated towards several important agricultural metrics, NDVI, EVI, and others.  I decided that it would be a suitable use of time to go and prototype a software tool to show areas of stress in a 3D LIDAR point cloud.  A major constraint from this point forward was my lack of relevant LIDAR data from the web since many different open source LIDAR datasets miss metrics that have since become common.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I used the C++ language and PCL (Point Cloud Library) and PDAL (Point Data Abstraction Library) as my main libraries for manipulating and indexing the Open Source LIDAR data that I used as the foundation for my proof of concept.  For the 3D viewer portion of the project, I used VTK and Qt to provide a suitable GUI framework.  By the end of the project, my tool was able to analyze any LIDAR file and calculate NDVI for each point, provided that the LIDAR file had suitable metrics for this purpose.  Because of the lack of additional metrics to calculate EVI (Enhanced Vegetation Index), I was not able to do so.  I was able to add additional overlay maps to the 3D viewed points, such as a height map setting.  I look forward to doing additional work on this topic, especially with regards to increasing the efficiency of my proof of concept and collecting more custom LIDAR data that I would be able to analyze more easily and deeply.</p></div>
+              <div class = 'horizontal-spacer'></div>
+              <div class = 'project-subtitle'>Technical Challenges and Solutions</div>
+              <div class = 'project-challenges'>
+                <p><strong>Challenge:</strong> Collect suitable LIDAR data for use in the Proof of Concept
+                <br><strong>Solution:</strong></p>
+                <p><strong>Challenge:</strong> Create a C++ GUI and 3D PCL viewer that is easy to use and intuitive.
+                <br><strong>Solution:</strong> I implemented a VTK and Qt based graphics system that is nascently cross platform, and easy to navigate with redundant links and navigation via keyboard.  Agricultural indexes are visualized.</p>
+              </div>
+            </div>
+            <div class = 'project' data-name='lidar' data-status='future-work'>
+              <div class = 'project-header card'>
+                <div class = 'project-title'>LIDAR Agricultural Analysis</div>
+                <div class = 'project-date'>June 2016-October 2016</div>
+                <a class = 'link' style='width: 75px;' href='https://github.com/wfehrnstrom/AgriGate'><img src = '/res/logos/GitHub-Logos/GitHub_Logo.png'/></a>
+              </div>
+              <div class = 'project-subtitle'>Developed with the help of ArgenTech</div>
+              <div class = 'horizontal-spacer'></div>
+              <div class = 'project-subtitle'>Background</div>
+              <div class = 'project-summary'><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I was initially made aware of LIDAR technology though peripherally aware of it, when I met with a representative of ArgenTech.  We discussed the potential applications of LIDAR technology with relation to agriculture.  On my own, I further researched what sorts of data LIDAR provides for an end user of data and the variety of different LIDAR systems available and their advantages and disadvantages.  A preliminary cost-benefit analysis I worked on showed promise for commercially viable LIDAR equipped drones to save farmers significant amounts of money by pinpoint targeting areas of stress in a crop field, assisted by the metrics that LIDAR provides, which can then be extrapolated towards several important agricultural metrics, NDVI, EVI, and others.  I decided that it would be a suitable use of time to go and prototype a software tool to show areas of stress in a 3D LIDAR point cloud.  A major constraint from this point forward was my lack of relevant LIDAR data from the web since many different open source LIDAR datasets miss metrics that have since become common.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I used the C++ language and PCL (Point Cloud Library) and PDAL (Point Data Abstraction Library) as my main libraries for manipulating and indexing the Open Source LIDAR data that I used as the foundation for my proof of concept.  For the 3D viewer portion of the project, I used VTK and Qt to provide a suitable GUI framework.  By the end of the project, my tool was able to analyze any LIDAR file and calculate NDVI for each point, provided that the LIDAR file had suitable metrics for this purpose.  Because of the lack of additional metrics to calculate EVI (Enhanced Vegetation Index), I was not able to do so.  I was able to add additional overlay maps to the 3D viewed points, such as a height map setting.  I look forward to doing additional work on this topic, especially with regards to increasing the efficiency of my proof of concept and collecting more custom LIDAR data that I would be able to analyze more easily and deeply.</p></div>
+              <div class = 'horizontal-spacer'></div>
+              <div class = 'project-subtitle'>Technical Challenges and Solutions</div>
+              <div class = 'project-challenges'>
+                <p><strong>Challenge:</strong> Collect suitable LIDAR data for use in the Proof of Concept
+                <br><strong>Solution:</strong></p>
+                <p><strong>Challenge:</strong> Create a C++ GUI and 3D PCL viewer that is easy to use and intuitive.
+                <br><strong>Solution:</strong> I implemented a VTK and Qt based graphics system that is nascently cross platform, and easy to navigate with redundant links and navigation via keyboard.  Agricultural indexes are visualized.</p>
+              </div>
             </div>
           </div>
-
         </div>
-        <!-- END SIGNIFICANT-WORK-->
-        <div id = 'skillset' class = 'header z-depth-2'><span class = 'header-text'>Skillset</span></div>
-        <!-- END SKILLSET-->
-        <div id = 'honors' class = 'header z-depth-2'><span class = 'header-text'>Honors and Accolades</span></div>
+        <h3 style = 'margin-bottom: 20px;'>Some Tools I've used</h3>
+        <div class = 'frameworks row'>
+          <div class = 'col s6 m3 l2 icon'><img alt='Arduino' src = '/res/logos/arduino_logo.png'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='Boost' src = '/res/logos/boost_logo.png'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='Dronekit' src = '/res/logos/dronekit_logo.png'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='JQuery' src = '/res/logos/JQuery_logo_text.svg'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='Git' src = '/res/logos/git_logo.png'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='Numpy' src = '/res/logos/numpy_logo.jpeg'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='OpenCV' src = '/res/logos/OpenCV.png'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='Raspberry Pi' src = '/res/logos/raspberry-pi.svg'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='STMicroelectronics' src = '/res/logos/STM_logo.png'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='VTK' src = '/res/logos/vtk_logo.jpeg'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='Point Cloud Library' src = '/res/logos/pcl_logo.png'/></div>
+          <div class = 'col s6 m3 l2 icon'><img alt='Point Data Abstraction Library' src = '/res/logos/pdal_logo.png'/></div>
+        </div>
       </div>
     </div>
     <div class = 'about-me' data-visited="false">
-
+      <!--<div class = 'scroll-up' data-aos='fade-up'><img class = 'up-img' src = '/res/logos/arrow_up.svg'/></div>-->
     </div>
   </main>
   <footer>

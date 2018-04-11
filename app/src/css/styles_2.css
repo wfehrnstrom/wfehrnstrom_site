@@ -1,0 +1,488 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Light.ttf") format("ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: bold;
+  src: url("/fonts/Roboto-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  src: url("/fonts/Roboto-Italic.ttf") format("ttf");
+  font-weight: 300;
+}
+
+/* @font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Light.ttf") format("ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Bold.ttf") format("ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  src: url("/fonts/Raleway-Italic.ttf") format("ttf");
+  font-weight: 300;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* height of main menu/header */
+  --menu-height: 75px;
+  /* offset for main background text "WILL FEHRNSTROM" */
+  --bg-text-x: 10%;
+  --bg-text-y: 70vh;
+  /* width and height for background image glitch */
+  --bg-img-width: 100%;
+  --bg-img-height: calc(100vh - var(--menu-height));
+  /* image glitch effect gaps */
+  --gap-horizontal: 10px;
+  --gap-vertical: 5px;
+  /* blend modes and colors for glitch effect */
+  --blend-color-1: #FF8300;
+  --blend-color-2: #26F342;
+  --blend-color-3: #00F3FF;
+  --blend-color-4: #4F73F4;
+  --blend-color-5: #0967E2;
+  --blend-mode-1: lighten;
+  --blend-mode-2: color-dodge;
+  --blend-mode-3: saturation;
+  --blend-mode-4: darken;
+  --blend-mode-5: luminosity;
+}
+
+p {
+  line-height: 1.75;
+}
+
+/* Used by resume subsection */
+.section-title {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 8vw;
+}
+
+.horizontal-spacer {
+  width: 100%;
+  height: 1px;
+  background-color: #2F2F2F;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.settings-icon {
+  position: absolute;
+  margin-top: 20px;
+  right: 20px;
+  width: 30px;
+  height: auto;
+}
+
+.cross-hatching {
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  z-index: 1;
+  left: calc(var(--bg-text-x) - 17px);
+  top: calc(var(--bg-text-y) - 20px);
+}
+
+.settings-panel {
+  opacity: 0;
+  position: absolute;
+  right: 60px;
+  margin-top: 20px;
+  width: 20vw;
+  padding: 15px;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.chip {
+  background-color: #FFFFFF !important;
+  border: 0.5px solid #AAAAAA;
+  overflow: visible;
+}
+
+.background-row, .background-col {
+  padding: 0 !important;
+  margin: 0 !important;
+  /* 75px is the height of the header */
+  height: var(--bg-img-height);
+  background-color: #EFEFEF;
+  z-index: -5;
+}
+
+.scroll-up {
+  position: sticky;
+  display: block;
+  left: 95vw;
+  top: 30px;
+  width: 30px;
+  height: auto;
+}
+
+.up-img {
+  transition: 0.5s ease-in-out;
+}
+
+.up-img:hover{
+  transform: translateY(-10px);
+}
+
+.background-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  width: 100vw !important;
+  height: 75px;
+  margin: 0 !important;
+  margin-right: 0 !important;
+  padding-right: 225px;
+  font-family: "Raleway", "Roboto";
+  z-index:5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #EFEFEF;
+  animation: color-change 5s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: #EFEFEF;
+  }
+  100% {
+    background-color: #FFFFFF;
+  }
+}
+
+.menu-item {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #2F2F2F;
+  height: 100% !important;
+  border: 0;
+  z-index:6;
+  opacity: 100;
+  width: 100% !important;
+  background-color:
+}
+
+.menu-bar-text {
+  font-size: 20px;
+  opacity: 0;
+  padding-bottom: 10px;
+}
+
+#no-filter {
+  z-index: 6;
+}
+
+.background-main-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  font-size: 8vw;
+  font-family: "Raleway", "Roboto";
+  color: #2F2F2F;
+  font-weight: bolder;
+  width: 80vw;
+  margin-left: 20px;
+}
+
+.background-text-wrapper {
+  position: absolute;
+  left: var(--bg-text-x);
+  top: var(--bg-text-y);
+  height: 150px;
+  width: 80vw;
+  z-index: 2;
+  background-color: #EFEFEF;
+}
+
+#magenta-filter, #blue-filter{
+  position: absolute;
+  font-size: 8vw;
+  font-family: "Raleway", "Roboto";
+  color: #2F2F2F;
+  font-weight: bolder;
+}
+
+#blue-filter{
+  color: #0FF;
+  z-index: 1;
+}
+
+#magenta-filter {
+  color: #F0F;
+  z-index: 2;
+}
+
+#no-filter:hover ~ #blue-filter {
+  animation: glitch-effect 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+#no-filter:hover ~ #magenta-filter {
+  animation: glitch-effect 0.3s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+}
+
+
+@keyframes glitch-effect {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+  }
+  60% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  to {
+    transform: 0;
+  }
+}
+
+@media only screen and (max-width: 715px){
+  .main-header {
+    font-size: 3em;
+    left: 10px;
+    top: 10vh;
+  }
+
+  .logo-wrapper {
+    top: 10vh !important;
+    margin-top: 0 !important;
+    height: 20vh !important;
+
+  }
+
+  .menu-item {
+    border-style: solid;
+    border-top: 1px solid white;
+    border-bottom: 0;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .background-main-text{
+    top: 40vh;
+  }
+}
+
+@media only screen and (max-width: 570px){
+  .main-header {
+    text-align: center;
+    font-size: 2.5em;
+    left: 20px;
+    top: 10vh;
+  }
+
+  .logo-wrapper {
+    top: 33vh !important;
+    right: 33vw !important;
+  }
+}
+
+.page-background {
+  display: block;
+  width: 100% !important;
+  z-index: -1;
+}
+
+.img-glitch {
+  position:relative;
+  overflow: hidden;
+  height: var(--bg-img-height) !important;
+  width: var(--bg-img-width);
+}
+
+.background-img {
+  display: block !important;
+  height: var(--bg-img-height);
+  width: var(--bg-img-width);
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.glitch-layer {
+  position: absolute;
+  top: calc(-1 * var(--gap-vertical));
+  left: calc(-1 * var(--gap-horizontal));
+  width: calc(100% + var(--gap-horizontal) * 2);
+  height: calc(100% + var(--gap-vertical) * 2);
+  background: url('/res/media/images/cold_stream_pond.jpg') no-repeat 100% 0;
+  background-size: cover;
+  background-color: var(--blend-color-1);
+  background-blend-mode: var(--blend-mode-1);
+}
+
+.glitch-layer:nth-child(2) {
+  background-color: var(--blend-color-2);
+  background-blend-mode: var(--blend-mode-2);
+}
+
+.glitch-layer:nth-child(3) {
+  background-color: var(--blend-color-3);
+  background-blend-mode: var(--blend-mode-3);
+}
+
+.glitch-layer:nth-child(4) {
+  background-color: var(--blend-color-4);
+  background-blend-mode: var(--blend-mode-4);
+}
+
+.glitch-layer:nth-child(5) {
+  background-color: var(--blend-color-5);
+  background-blend-mode: var(--blend-mode-5);
+}
+
+.glitch-layer:nth-child(n+2) {
+	opacity: 0;
+}
+
+.img-glitch:hover .glitch-layer:nth-child(n+2){
+  opacity: 1;
+}
+
+.logo-wrapper {
+  position: absolute;
+  left: 17.5vw;
+  top: 17.5vh;
+  width: 70vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  position:static;
+  height: 100%;
+  width: 100%;
+  border: 0px solid white;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  object-fit:contain !important;
+  z-index:5;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.banner-wrapper {
+  position: fixed;
+  right: 0;
+  top: 14vh;
+  z-index: 1;
+}
+
+/* MEDIA */
+
+.blogs, .resume, .media {
+  display: none;
+}
+
+.header {
+  font-family: 'Raleway', 'Roboto';
+  width: 100%;
+  height: auto;
+  font-size: 6vmin;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.subpage-header{
+  position: relative;
+  right: 15px;
+  margin-top: 20px;
+}
+
+.text-based-header {
+  margin-top: 20px;
+  margin-right: 30px;
+  height: 15vh;
+  font-size: 5vw;
+  color: #2F2F2F;
+}
+
+.header-text {
+  margin: auto;
+}
+
+.page-section {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+#main-logo-group{
+  clip-path: url(#letter-clip);
+}
+
+#logo-svg {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40vw;
+  z-index: 6;
+}
+
+@media only screen and (max-width: 1400px){
+  #logo-svg {
+    bottom: 100px;
+  }
+}
+
+.censor-div {
+  position: absolute;
+  background-color: #2F80ED;
+  z-index: 7;
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 80px;
+  background-color: #5F5F5F;
+  margin: 0;
+  padding: 0;
+  align-self: stretch;
+}
